@@ -16,15 +16,14 @@
  * 3- HSE_RC
  * 4- PLL
  */
-#define SYS_CLOCK				PLL
+#define SYS_CLOCK						PLL
 
 /*
  * CLOCK SECURITY SYSTEM OPTIONS :
  * 1- DISABLE
  * 2- ENABLE
  */
-#define CCS_STATE 				DISABLE
-
+#define CCS_STATE 						DISABLE
 
 /*	PLL MULTIPLICATION OPTIONS :
  * 1- PLL_MUL_2,
@@ -43,7 +42,7 @@
  * 14- PLL_MUL_15
  * 15- PLL_MUL_16
  */
-#define PLL_MUL_FACTOR				PLL_MUL_2
+#define PLL_MUL_FACTOR					PLL_MUL_2
 
 /*
  * MCO PIN OUTPUT OPTIONS :
@@ -53,7 +52,7 @@
  * 4- HSE_OUTPUT
  * 5- PLL_OUTPUT
  */
-#define MCO_STATE				PLL_OUTPUT
+#define MCO_STATE						PLL_OUTPUT
 
 /*
  * PLL SOURCE OPTIONS :
@@ -61,8 +60,7 @@
  * 2- HSE
  * 3- HSE_DIV2
  */
-#define PLL_SOURCE				HSE_DIV2
-
+#define PLL_SOURCE						HSE_DIV2
 
 /*
  * RCC AHB BUS PRESCALLER :
@@ -107,7 +105,6 @@
  * 4- RCC_PRESCALLER_8
  */
 #define ADC_PRESCALLER					RCC_PRESCALLER_8
-
 
 /*
  * USB PRESCALLER OPTIONS :

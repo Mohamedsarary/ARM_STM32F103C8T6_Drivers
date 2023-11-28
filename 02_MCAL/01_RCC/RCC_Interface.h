@@ -39,8 +39,8 @@
 #define WWDG			11
 #define SPI2			14
 #define SPI3			15
-#define USART2			17
-#define USART3			18
+#define USART2		17
+#define USART3		18
 #define UART4			19
 #define UART5			20
 #define I2C1			21
@@ -66,11 +66,11 @@
 #define TIM1			11
 #define SPI1			12
 #define TIM8			13
-#define USART1			14
+#define USART1		14
 #define ADC3			15
 #define TIM9			19
 #define TIM10			20
-#define TIME11			21
+#define TIME11		21
 
 
 /*********************************************************************************************************/

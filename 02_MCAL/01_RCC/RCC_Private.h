@@ -92,16 +92,16 @@ typedef struct
 
 
 /************************************** BUSES PRESCALLERS ****************************************/
-#define	RCC_PRESCALLER_0           0
-#define	RCC_PRESCALLER_2           1
-#define	RCC_PRESCALLER_4           2
-#define	RCC_PRESCALLER_6           3
-#define	RCC_PRESCALLER_8           4
-#define	RCC_PRESCALLER_16          5
-#define	RCC_PRESCALLER_64          6
-#define	RCC_PRESCALLER_128         7
-#define	RCC_PRESCALLER_256         8
-#define	RCC_PRESCALLER_512         9
+#define	RCC_PRESCALLER_0                   0
+#define	RCC_PRESCALLER_2                   1
+#define	RCC_PRESCALLER_4                   2
+#define	RCC_PRESCALLER_6                   3
+#define	RCC_PRESCALLER_8                   4
+#define	RCC_PRESCALLER_16                   5
+#define	RCC_PRESCALLER_64                   6
+#define	RCC_PRESCALLER_128                   7
+#define	RCC_PRESCALLER_256                   8
+#define	RCC_PRESCALLER_512                   9
 
 
 /******************************** PLL MULTIPLICATION FACTORS ************************************/

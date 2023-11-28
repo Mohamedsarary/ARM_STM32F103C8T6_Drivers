@@ -12,18 +12,18 @@
 #include "StdTypes.h"
 
 /*********************************** ARM CORTEX M3 BUSES ***********************************/
-#define AHB				0
-#define APB1			1
-#define APB2			2
+#define AHB          0
+#define APB1         1
+#define APB2         2
 
 /*********************************** AHB BUS PERIPHERALS ***********************************/
-#define DMA1	  		0
-#define DMA2		  	1
-#define SRAM		  	2
-#define FLITF			4
-#define CRCE			 6
-#define FSMC		  	8
-#define SDIO		  	10
+#define DMA1         0
+#define DMA2         1
+#define SRAM         2
+#define FLITF        4
+#define CRCE         6
+#define FSMC         8
+#define SDIO         10
 
 /*********************************** APB1 BUS PERIPHERALS ***********************************/
 #define TIM2			0

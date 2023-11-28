@@ -9,86 +9,69 @@
 #ifndef RCC_INTERFACE_H_
 #define RCC_INTERFACE_H_
 
-#include "../01_LIB/StdTypes.h"
+#include "StdTypes.h"
 
 /*********************************** ARM CORTEX M3 BUSES ***********************************/
-typedef enum
-{
-	AHB,
-	APB1,
-	APB2,
-
-}SysBuses_t;
-
+#define AHB				0
+#define APB1			1
+#define APB2			2
 
 /*********************************** AHB BUS PERIPHERALS ***********************************/
-typedef enum
-{
-	DMA1,
-	DMA2,
-	SRAM,
-	FLITF = 4,
-	CRCE  = 6,
-	FSMC  = 8,
-	SDIO  = 10,
-
-}AHBPeripherals_t;
-
+#define DMA1			0
+#define DMA2			1
+#define SRAM			2
+#define FLITF			4
+#define CRCE			6
+#define FSMC			8
+#define SDIO			10
 
 /*********************************** APB1 BUS PERIPHERALS ***********************************/
-typedef enum
-{
-	TIM2,
-	TIM3,
-	TIM4,
-	TIM5,
-	TIM6,
-	TIM7,
-	TIM12,
-	TIM13,
-	TIM14,
-	RTC,
-	WWDG = 11,
-	SPI2 = 14,
-	SPI3,
-	USART2 = 17,
-	USART3,
-	UART4,
-	UART5,
-	I2C1,
-	I2C2,
-	USB,
-	BxCAN = 25,
-	BKP,
-	PWR,
-	DAC,
-	IWDG,
-}APB1Peripherals_t;
-
+#define TIM2			0
+#define	TIM3			1
+#define TIM4			2
+#define TIM5			3
+#define TIM6			4
+#define TIM7			5
+#define TIM12			6
+#define TIM13			7
+#define TIM14			8
+#define RTC				9
+#define WWDG			11
+#define SPI2			14
+#define SPI3			15
+#define USART2			17
+#define USART3			18
+#define UART4			19
+#define UART5			20
+#define I2C1			21
+#define I2C2			22
+#define USB				23
+#define BxCAN			25
+#define BKP				26
+#define PWR				27
+#define DAC				28
+#define IWDG			29
 
 /*********************************** APB2 BUS PERIPHERALS ***********************************/
-typedef enum
-{
-	AFIO,
-	GPIOA = 2,
-	GPIOB,
-	GPIOC,
-	GPIOD,
-	GPIOE,
-	GPIOF,
-	GPIOG,
-	ADC1,
-	ADC2,
-	TIM1,
-	SPI1,
-	TIM8,
-	USART1,
-	ADC3,
-	TIM9 = 19,
-	TIM10,
-	TIM11,
+#define	AFIO			0
+#define	GPIOA			2
+#define	GPIOB			3
+#define	GPIOC			4
+#define	GPIOD			5
+#define	GPIOE			6
+#define	GPIOF			7
+#define GPIOG			8
+#define ADC1			9
+#define ADC2			10
+#define TIM1			11
+#define SPI1			12
+#define TIM8			13
+#define USART1			14
+#define ADC3			15
+#define TIM9			19
+#define TIM10			20
+#define TIME11			21
 
-}APB2Peripherals_t;
 
 /*********************************************************************************************************/
 /**************************************** RCC FUNCTIONS PROTOTYPE ****************************************/
@@ -108,7 +91,7 @@ void RCC_voidClockInit(void);
  * O/P : (u8) ERROR STATE
  * DESCRIPTION : FUNCTION TO ENABLE THE PERIPHERAL BY ENABLE THE CLOCK OF THE PERIHPERAL
  */
-u8 RCC_u8PeriheralEnable( SysBuses_t Copy_u8BusID , u8 Copy_u8PeriheralID);
+u8 RCC_u8PeriheralEnable( u8 Copy_u8BusID , u8 Copy_u8PeriheralID);
 
 /*
  * Function : RCC_u8PeriheralEnable
@@ -116,7 +99,7 @@ u8 RCC_u8PeriheralEnable( SysBuses_t Copy_u8BusID , u8 Copy_u8PeriheralID);
  * O/P : ERROR_STATE (FuncNOK,FuncOK,NullPointer,OutOfRange)
  * DESCRIPTION : FUNCTION TO DISABLE THE PERIPHERAL BY DISABLE THE CLOCK OF THE PERIHPERAL
  */
-u8 RCC_u8PeriheralDisable( SysBuses_t Copy_u8BusID , u8 Copy_u8PeriheralID);
+u8 RCC_u8PeriheralDisable( u8 Copy_u8BusID , u8 Copy_u8PeriheralID);
 
 
 /*********************************************************************************************************/

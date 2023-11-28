@@ -5,12 +5,12 @@
  *      File  : RCC_Program.c
  */
 
-#include "../01_LIB/ErrorStates.h"
-#include "../01_LIB/StdTypes.h"
-#include "../01_LIB/BitMath.h"
+#include "ErrorStates.h"
+#include "StdTypes.h"
+#include "BitMath.h"
 
-#include "RCC_Private.h"
 #include "RCC_Interface.h"
+#include "RCC_Private.h"
 #include "RCC_Config.h"
 
 
@@ -19,7 +19,7 @@ void RCC_voidClockInit(void)
 
 #if SYS_CLOCK == HSI
 	SET_BIT(MRCC->RCC_CR,CR_HSI_ON);					/* TURN ON HSI */
-	while( !(GET_BIT(MRCC->RCC_CR,CR_HSI_RDY)) );		/* WAIT TILL HSI IS READY */
+	//while( !(GET_BIT(MRCC->RCC_CR,CR_HSI_RDY)) );		/* WAIT TILL HSI IS READY */
 	CLR_BIT(MRCC->RCC_CFGR,CFGR_SW0);					/* CHOOSE HSI */
 	CLR_BIT(MRCC->RCC_CFGR,CFGR_SW1);
 
@@ -33,7 +33,7 @@ void RCC_voidClockInit(void)
 #elif SYS_CLOCK == HSE_RC
 	SET_BIT(MRCC->RCC_CR,CR_HSE_ON);					/* TURN ON HSE */
 	while( !(GET_BIT(MRCC->RCC_CR,CR_HSE_RDY)) );		/* WAIT TILL HSE IS READY */
-	SET_BIT(MRCC->RCC_CR,CR_HSEBYP);					/* DISABLE BYPASS */
+	SET_BIT(MRCC->RCC_CR,CR_HSE_BYP);					/* DISABLE BYPASS */
 	SET_BIT(MRCC->RCC_CFGR,CFGR_SW0);					/* CHOOSE HSE */
 	CLR_BIT(MRCC->RCC_CFGR,CFGR_SW1);
 
@@ -50,7 +50,7 @@ void RCC_voidClockInit(void)
 #elif PLL_SOURCE == HSE
 	SET_BIT(MRCC->RCC_CR,CR_HSE_ON);
 	SET_BIT(MRCC->RCC_CFGR,CFGR_PLLSRC);
-#elif PLL_SOURCE = HSE_DIV2
+#elif PLL_SOURCE == HSE_DIV2
 	SET_BIT(MRCC->RCC_CR,CR_HSE_ON);
 	SET_BIT(MRCC->RCC_CFGR,CFGR_PLLXTPRE);
 	SET_BIT(MRCC->RCC_CFGR,CFGR_PLLSRC);
@@ -215,7 +215,7 @@ void RCC_voidClockInit(void)
 }
 
 
-u8 RCC_u8PeriheralEnable( SysBuses_t Copy_u8BusID , u8 Copy_u8PeriheralID)
+u8 RCC_u8PeriheralEnable( u8 Copy_u8BusID , u8 Copy_u8PeriheralID)
 {
 	u8 Local_u8FuncState = FuncNOK ;
 	if(Copy_u8PeriheralID <= 31 )
@@ -243,7 +243,7 @@ u8 RCC_u8PeriheralEnable( SysBuses_t Copy_u8BusID , u8 Copy_u8PeriheralID)
 }
 
 
-u8 RCC_u8PeriheralDisable( SysBuses_t Copy_u8BusID , u8 Copy_u8PeriheralID)
+u8 RCC_u8PeriheralDisable( u8 Copy_u8BusID , u8 Copy_u8PeriheralID)
 {
 	u8 Local_u8FuncState = FuncNOK ;
 	if(Copy_u8PeriheralID <= 31 )
